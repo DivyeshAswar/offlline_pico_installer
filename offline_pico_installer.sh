@@ -248,11 +248,13 @@ else
 	Environment=\"HTTPS_PROXY=$ProxyUrl\"">/etc/systemd/system/docker.service.d/http-proxy.conf
 
 			sudo systemctl daemon-reload
+			sleep 1
 			sudo systemctl restart docker
+			sleep 1
 		fi
 
 		echo -e "[-] Loading docker Image for PICO\n"
-		#docker pull dnif/pico:$tag
+		sleep 5
 		docker load -q -i /var/tmp/pico920.tar
 
 
