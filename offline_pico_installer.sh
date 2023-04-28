@@ -18,7 +18,8 @@ function compose_check() {
 	else
 		echo -e "[-] Finding docker-compose installation - ... \e[1;31m[NEGATIVE] \e[0m\n"
 		echo -e "[-] Installing docker-compose\n"
-		sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &>> /DNIF/install.log
+		mv /var/tmp/docker-compose /usr/local/bin/
+		#sudo curl -L "https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose &>> /DNIF/install.log
 		sudo chmod +x /usr/local/bin/docker-compose&>> /DNIF/install.log
         	echo -e "[-] Installing docker-compose - ... \e[1;32m[DONE] \e[0m\n"
 	fi
@@ -255,7 +256,7 @@ else
 
 		echo -e "[-] Loading docker Image for PICO\n"
 		sleep 5
-		docker load -q -i /var/tmp/pico920.tar
+		docker load -q -i /var/tmp/offlnepico920.tar
 
 
 		COREIP=""
