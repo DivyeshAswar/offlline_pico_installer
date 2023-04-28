@@ -256,7 +256,7 @@ else
 
 		echo -e "[-] Loading docker Image for PICO\n"
 		sleep 5
-		docker load -q -i /var/tmp/offlnepico920.tar
+		docker load -q -i /var/tmp/offlinepico920.tar
 
 
 		COREIP=""
